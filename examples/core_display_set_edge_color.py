@@ -27,11 +27,12 @@ context = display.Context
 context.SetAutoActivateSelection(False)
 
 aisShape = AIS_Shape(myBox)
-context.Display(aisShape)
+context.Display(aisShape, True)
 
 # Set shape transparency, a float number from 0.0 to 1.0
-context.SetTransparency(aisShape, 0.6)
-context.HilightWithColor(aisShape, Quantity_NOC_BLACK)
+context.SetTransparency(aisShape, 0.6, True)
+# TODO following line fails
+#context.HilightWithColor(aisShape, Quantity_NOC_BLACK)
 
 display.View_Iso()
 display.FitAll()
